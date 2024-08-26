@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>143</title>
+    <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/009/400/889/non_2x/red-heart-set-clipart-design-illustration-free-png.png" type="image/png">
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    padding-top: 5px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 10px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.box {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.box:hover {
+    background-color: #555;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.popup .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.popup p {
+    margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .box {
+        padding: 10px;
+        font-size: 0.8em;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 15px;
+    }
+    body{
+        padding-bottom: 60px; /* Add space at the bottom to prevent overlap */
+    }
+}
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 15px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" onclick="showMessage(1)">1</div>
+        <div class="box" onclick="showMessage(2)">2</div>
+        <div class="box" onclick="showMessage(3)">3</div>
+        <div class="box" onclick="showMessage(4)">4</div>
+        <div class="box" onclick="showMessage(5)">5</div>
+        <div class="box" onclick="showMessage(6)">6</div>
+        <div class="box" onclick="showMessage(7)">7</div>
+        <div class="box" onclick="showMessage(8)">8</div>
+        <div class="box" onclick="showMessage(9)">9</div>
+        <div class="box" onclick="showMessage(10)">10</div>
+        <div class="box" onclick="showMessage(11)">11</div>
+        <div class="box" onclick="showMessage(12)">12</div>
+        <div class="box" onclick="showMessage(13)">13</div>
+        <div class="box" onclick="showMessage(14)">14</div>
+        <div class="box" onclick="showMessage(15)">15</div>
+        <div class="box" onclick="showMessage(16)">16</div>
+        <div class="box" onclick="showMessage(17)">17</div>
+        <div class="box" onclick="showMessage(18)">18</div>
+        <div class="box" onclick="showMessage(19)">19</div>
+        <div class="box" onclick="showMessage(20)">20</div>
+        <div class="box" onclick="showMessage(21)">21</div>
+        <div class="box" onclick="showMessage(22)">22</div>
+        <div class="box" onclick="showMessage(23)">23</div>
+        <div class="box" onclick="showMessage(24)">24</div>
+        <div class="box" onclick="showMessage(25)">25</div>
+        <div class="box" onclick="showMessage(26)">26</div>
+        <div class="box" onclick="showMessage(27)">27</div>
+        <div class="box" onclick="showMessage(28)">28</div>
+        <div class="box" onclick="showMessage(29)">29</div>
+        <div class="box" onclick="showMessage(30)">30</div>
+        <div class="box" onclick="showMessage(31)">31</div>
+        <div class="box" onclick="showMessage(32)">32</div>
+        <div class="box" onclick="showMessage(33)">33</div>
+        <div class="box" onclick="showMessage(34)">34</div>
+        <div class="box" onclick="showMessage(35)">35</div>
+        <div class="box" onclick="showMessage(36)">36</div>
+        <div class="box" onclick="showMessage(37)">37</div>
+        <div class="box" onclick="showMessage(38)">38</div>
+        <div class="box" onclick="showMessage(39)">39</div>
+        <div class="box" onclick="showMessage(40)">40</div>
+        <div class="box" onclick="showMessage(41)">41</div>
+        <div class="box" onclick="showMessage(42)">42</div>
+        <div class="box" onclick="showMessage(43)">43</div>
+        <div class="box" onclick="showMessage(44)">44</div>
+        <div class="box" onclick="showMessage(45)">45</div>
+        <div class="box" onclick="showMessage(46)">46</div>
+        <div class="box" onclick="showMessage(47)">47</div>
+        <div class="box" onclick="showMessage(48)">48</div>
+        <div class="box" onclick="showMessage(49)">49</div>
+        <div class="box" onclick="showMessage(50)">50</div>
+        <div class="box" onclick="showMessage(51)">51</div>
+        <div class="box" onclick="showMessage(52)">52</div>
+        <div class="box" onclick="showMessage(53)">53</div>
+        <div class="box" onclick="showMessage(54)">54</div>
+        <div class="box" onclick="showMessage(55)">55</div>
+        <div class="box" onclick="showMessage(56)">56</div>
+        <div class="box" onclick="showMessage(57)">57</div>
+        <div class="box" onclick="showMessage(58)">58</div>
+        <div class="box" onclick="showMessage(59)">59</div>
+        <div class="box" onclick="showMessage(60)">60</div>
+        <div class="box" onclick="showMessage(61)">61</div>
+        <div class="box" onclick="showMessage(62)">62</div>
+        <div class="box" onclick="showMessage(63)">63</div>
+        <div class="box" onclick="showMessage(64)">64</div>
+        <div class="box" onclick="showMessage(65)">65</div>
+        <div class="box" onclick="showMessage(66)">66</div>
+        <div class="box" onclick="showMessage(67)">67</div>
+        <div class="box" onclick="showMessage(68)">68</div>
+        <div class="box" onclick="showMessage(69)">69</div>
+        <div class="box" onclick="showMessage(70)">70</div>
+        <div class="box" onclick="showMessage(71)">71</div>
+        <div class="box" onclick="showMessage(72)">72</div>
+        <div class="box" onclick="showMessage(73)">73</div>
+        <div class="box" onclick="showMessage(74)">74</div>
+        <div class="box" onclick="showMessage(75)">75</div>
+        <div class="box" onclick="showMessage(76)">76</div>
+        <div class="box" onclick="showMessage(77)">77</div>
+        <div class="box" onclick="showMessage(78)">78</div>
+        <div class="box" onclick="showMessage(79)">79</div>
+        <div class="box" onclick="showMessage(80)">80</div>
+        <div class="box" onclick="showMessage(81)">81</div>
+        <div class="box" onclick="showMessage(82)">82</div>
+        <div class="box" onclick="showMessage(83)">83</div>
+        <div class="box" onclick="showMessage(84)">84</div>
+        <div class="box" onclick="showMessage(85)">85</div>
+        <div class="box" onclick="showMessage(86)">86</div>
+        <div class="box" onclick="showMessage(87)">87</div>
+        <div class="box" onclick="showMessage(88)">88</div>
+        <div class="box" onclick="showMessage(89)">89</div>
+        <div class="box" onclick="showMessage(90)">90</div>
+        <div class="box" onclick="showMessage(91)">91</div>
+        <div class="box" onclick="showMessage(92)">92</div>
+        <div class="box" onclick="showMessage(93)">93</div>
+        <div class="box" onclick="showMessage(94)">94</div>
+        <div class="box" onclick="showMessage(95)">95</div>
+        <div class="box" onclick="showMessage(96)">96</div>
+        <div class="box" onclick="showMessage(97)">97</div>
+        <div class="box" onclick="showMessage(98)">98</div>
+        <div class="box" onclick="showMessage(99)">99</div>
+        <div class="box" onclick="showMessage(100)">100</div>
+        <div class="box" onclick="showMessage(101)">101</div>
+        <div class="box" onclick="showMessage(102)">102</div>
+        <div class="box" onclick="showMessage(103)">103</div>
+        <div class="box" onclick="showMessage(104)">104</div>
+        <div class="box" onclick="showMessage(105)">105</div>
+        <div class="box" onclick="showMessage(106)">106</div>
+        <div class="box" onclick="showMessage(107)">107</div>
+        <div class="box" onclick="showMessage(108)">108</div>
+        <div class="box" onclick="showMessage(109)">109</div>
+        <div class="box" onclick="showMessage(110)">110</div>
+        <div class="box" onclick="showMessage(111)">111</div>
+        <div class="box" onclick="showMessage(112)">112</div>
+        <div class="box" onclick="showMessage(113)">113</div>
+        <div class="box" onclick="showMessage(114)">114</div>
+        <div class="box" onclick="showMessage(115)">115</div>
+        <div class="box" onclick="showMessage(116)">116</div>
+        <div class="box" onclick="showMessage(117)">117</div>
+        <div class="box" onclick="showMessage(118)">118</div>
+        <div class="box" onclick="showMessage(119)">119</div>
+        <div class="box" onclick="showMessage(120)">120</div>
+        <div class="box" onclick="showMessage(121)">121</div>
+        <div class="box" onclick="showMessage(122)">122</div>
+        <div class="box" onclick="showMessage(123)">123</div>
+        <div class="box" onclick="showMessage(124)">124</div>
+        <div class="box" onclick="showMessage(125)">125</div>
+        <div class="box" onclick="showMessage(126)">126</div>
+        <div class="box" onclick="showMessage(127)">127</div>
+        <div class="box" onclick="showMessage(128)">128</div>
+        <div class="box" onclick="showMessage(129)">129</div>
+        <div class="box" onclick="showMessage(130)">130</div>
+        <div class="box" onclick="showMessage(131)">131</div>
+        <div class="box" onclick="showMessage(132)">132</div>
+        <div class="box" onclick="showMessage(133)">133</div>
+        <div class="box" onclick="showMessage(134)">134</div>
+        <div class="box" onclick="showMessage(135)">135</div>
+        <div class="box" onclick="showMessage(136)">136</div>
+        <div class="box" onclick="showMessage(137)">137</div>
+        <div class="box" onclick="showMessage(138)">138</div>
+        <div class="box" onclick="showMessage(139)">139</div>
+        <div class="box" onclick="showMessage(140)">140</div>
+        <div class="box" onclick="showMessage(141)">141</div>
+        <div class="box" onclick="showMessage(142)">142</div>
+        <div class="box" onclick="showMessage(143)">143</div>        
+    </div>
+
+    <!-- Pop-up message -->
+    <div id="popup" class="popup">
+        <span id="close" class="close" onclick="closePopup()">&times;</span>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function showMessage(number) {
+    const messages = {
+        1: "Ты — солнечный свет в моей жизни.",
+2: "Я люблю тебя больше, чем можно выразить словами.",
+3: "Каждый момент с тобой драгоценен.",
+4: "Ты заставляешь мое сердце биться чаще.",
+5: "Я не могу представить свою жизнь без тебя.",
+6: "Твоя улыбка освещает мой мир.",
+7: "Я чувствую себя таким счастливым, что ты есть у меня.",
+8: "Ты дополняешь меня.",
+9: "С тобой все становится на свои места.",
+10: "Ты — моя любовь навсегда.",
+11: "Ты — мое величайшее приключение.",
+12: "Моя любовь к тебе растет с каждым днем.",
+13: "Я так благодарен тебе.",
+14: "Ты — причина, по которой я просыпаюсь с улыбкой.",
+15: "Ты делаешь каждый день лучше.",
+16: "Я счастлив, когда я с тобой.",
+17: "Ты — моя мечта, ставшая явью.",
+18: "Ты делаешь жизнь прекрасной.",
+19: "Мне нравится все в тебе.",
+20: "Ты радуешь мое сердце.",
+21: "Ты — все для меня.",
+22: "Я ценю каждое мгновение с тобой.",
+23: "Ты делаешь мою жизнь полной.",
+24: "Я влюбляюсь в тебя все больше с каждым днем.",
+25: "Ты — моя родственная душа.",
+26: "Ты — моя единственная.",
+27: "Я люблю тебя до Луны и обратно.",
+28: "Ты делаешь меня лучше.",
+29: "Ты — мое счастье до конца жизни.",
+30: "Ты — мой лучший друг и моя любовь.",
+31: "Ты — моя любовь навсегда.",
+32: "Мне нравится быть с тобой.",
+33: "Ты — моя особенная.",
+34: "Я всегда буду выбирать тебя.",
+35: "Ты — любовь всей моей жизни.",
+36: "Ты — желание моего сердца.",
+37: "Я так счастлив, что у меня есть ты.",
+38: "Ты — моя величайшая радость.",
+39: "Ты делаешь мою жизнь достойной.",
+40: "Мне нравится твой смех.",
+41: "Ты — мое сладкое спасение.",
+42: "Я так влюблен в тебя.",
+43: "Ты — мое любимое место.",
+44: "Ты — мой мир.",
+45: "Ты заставляешь меня верить в любовь.",
+46: "Я не могу дождаться, когда мы проведем вместе вечность.",
+47: "Ты — моя причина для всего.",
+48: "Ты — мое счастливое место.",
+49: "Ты — мое солнце в дождливый день.",
+50: "Я люблю тебя больше всего.",
+51: "Ты — моя идеальная пара.",
+52: "Я так благодарен за тебя.",
+53: "Ты делаешь меня особенным.",
+54: "Ты — мое лучшее решение.",
+55: "Ты — мое безопасное убежище.",
+56: "Ты — мой свет в темноте.",
+57: "Мне так повезло любить тебя.",
+58: "Ты — моя лучшая половина.",
+59: "Ты заставляешь мое сердце петь.",
+60: "Ты — мой любимый человек.",
+61: "Я люблю тебя бесконечно.",
+62: "Ты — все для меня и даже больше.",
+63: "Я так горжусь тобой.",
+64: "Ты делаешь меня полноценным.",
+65: "Ты — моя причина для улыбки.",
+66: "Ты делаешь мою жизнь ярче.",
+67: "Мне нравится твое доброе сердце.",
+68: "Ты — мое величайшее сокровище.",
+69: "Ты — моя любовная история.",
+70: "Ты — моя вечная любимая.",
+71: "Мне так повезло, что я нашел тебя.",
+72: "Ты — мое счастливое завершение.",
+73: "Ты делаешь каждый день особенным.",
+74: "Ты — моя идеальная любовь.",
+75: "Я люблю твою прекрасную душу.",
+76: "Ты — мое сладкое воспоминание.",
+77: "Ты делаешь мой мир вращающимся.",
+78: "Ты — дом моего сердца.",
+79: "Я так благодарен за то, что люблю тебя.",
+80: "Ты — мое самое большое благословение.",
+81: "Ты заставляешь меня верить в магию.",
+82: "Ты — мой величайший подарок.",
+83: "Ты — моя настоящая любовь.",
+84: "Мне нравится твое нежное прикосновение.",
+85: "Ты — моя причина для радости.",
+86: "Ты — мое сладкое счастье.",
+87: "Ты заставляешь мое сердце взлетать.",
+88: "Ты — моя единственная настоящая любовь.",
+89: "Я так счастлив быть твоим.",
+90: "Ты — моя любовь, моя жизнь.",
+91: "Ты — все для меня, навсегда.",
+92: "Ты делаешь мою жизнь красивой.",
+93: "Ты — радость моего сердца.",
+94: "Ты — моя любовь всегда.",
+95: "Ты — мое единственное настоящее счастье.",
+96: "Ты — истинное желание моего сердца.",
+97: "Я так влюблен в твою душу.",
+98: "Ты — моя любовь, мой мир.",
+99: "Ты делаешь мою жизнь полной.",
+100: "Ты — все для меня, моя любовь.",
+101: "Ты — моя величайшая радость.",
+102: "Ты — моя идеальная любовь.",
+103: "Ты — мое сладкое спасение.",
+104: "Ты — моя любовь, моя жизнь.",
+105: "Ты — мое истинное счастье.",
+106: "Ты — радость моего сердца.",
+107: "Ты — моя любовь навсегда.",
+108: "Ты — все для меня, всегда.",
+109: "Ты заставляешь мое сердце петь от радости.",
+110: "Ты — моя единственная настоящая любовь.",
+111: "Ты — мое величайшее сокровище.",
+112: "Ты — моя любовь, все для меня.",
+113: "Ты — мое сладкое воспоминание.",
+114: "Ты делаешь мой мир ярче.",
+115: "Ты — моя любовь, мой свет.",
+116: "Ты — мое единственное настоящее счастье.",
+117: "Ты — мой величайший подарок.",
+118: "Ты — истинная любовь моего сердца.",
+119: "Ты — мое сладкое счастье.",
+120: "Ты делаешь мою жизнь полной.",
+121: "Ты — моя любовь, навсегда.",
+122: "Ты — желание моего сердца.",
+123: "Ты — все для меня, всегда.",
+124: "Ты делаешь мой мир вращающимся.",
+125: "Ты — моя любовь, мое сердце.",
+126: "Ты — мое сладкое спасение.",
+127: "Ты — моя настоящая любовь всегда.",
+128: "Ты — моя величайшая радость.",
+129: "Ты — истинное желание моего сердца.",
+130: "Ты — моя единственная настоящая любовь.",
+131: "Ты — мое величайшее сокровище.",
+132: "Ты делаешь мою жизнь красивой.",
+133: "Ты — моя любовь, мой мир.",
+134: "Ты — мое сладкое воспоминание.",
+135: "Ты — моя любовь, моя жизнь.",
+136: "Ты — истинная любовь моего сердца.",
+137: "Ты делаешь мой мир ярче.",
+138: "Ты — моя единственная настоящая любовь.",
+139: "Ты — мой величайший подарок.",
+140: "Ты — все для меня, всегда.",
+141: "Ты заставляешь мое сердце петь.",
+142: "Ты — моя любовь навсегда.",
+143: "Ты — моя единственная."
+    };
+
+    const message = document.getElementById('message');
+    message.textContent = messages[number] || "You are my everything.";
+
+    const popup = document.getElementById('popup');
+    popup.style.display = 'block';
+}
+
+function closePopup() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'none';
+}
+    </script>
+<footer>
+    <a href="https://github.com/carlcastanas" target="_blank" rel="noopener noreferrer">@carlcastanas</a>
+</footer>
+</body>
+</html>
